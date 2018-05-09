@@ -24,20 +24,37 @@ namespace BMI_WPF2
         {
             InitializeComponent();
         }
-        private void w_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+
+        // 把身高、體重、bmi等會用到的數值設為全域變數
+        public class Global
         {
-            Weightnumber.Text = w.Value.ToString("0.0");
-            Canvas.SetLeft(weight, w.Value * 4);
+           public static string height1, weight1;
+            public static float H, bmi1, W;
         }
 
-        private void h_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        // 拖動體重條的觸發事件
+        //private void w_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+       // {
+            
+
+            
+       // }
+
+        private void ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             Heightnumber.Text = h.Value.ToString("0.0");
             Canvas.SetLeft(height, h.Value * 2);
+
+            // 令Weightnumber顯示體重條的數值
+            Weightnumber.Text = w.Value.ToString("0.0");
+            // 令Weightnumber跟著滑桿
+            Canvas.SetLeft(weight, w.Value * 4);
+
             double H = double.Parse(Heightnumber.Text);
             double W = double.Parse(Weightnumber.Text);
+
             double bmi = W / Math.Pow((H / 100), 2);
-            string[] parts = bmi.ToString().Split('.');
+            string[] parts = bmi.ToString("0.00").Split('.');
             bminumber1.Text = parts[0];
             if (parts.Length > 1)
             {
@@ -46,7 +63,7 @@ namespace BMI_WPF2
             else
             {
                 bminumber2.Text = ".0";
-            }
+            } 
         }
     }
 }

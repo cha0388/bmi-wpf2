@@ -5,25 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BMI_WPF2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="BMI計算機" Height="350" Width="525">
     <Grid>
         <StackPanel Margin="20">
 
             <Canvas Width="460" Height="40" Background="OliveDrab">
-                <Border Width="60" CornerRadius="10" Background="AliceBlue" Name="height" Canvas.Top="0" Canvas.Left="0">
+                <Border Name="height" Width="60" CornerRadius="10" Background="AliceBlue" Canvas.Top="0" Canvas.Left="0">
                     <TextBlock Name="Heightnumber" Width="40" Height="30" TextAlignment="Center" Padding="0 4">0</TextBlock>
                 </Border>
             </Canvas>
 
-            <Slider Name="h" Width="400" Minimum="0" Maximum="200" ValueChanged="h_ValueChanged"></Slider>
+            <Slider Name="h" Width="400" Minimum="0" Maximum="200" ValueChanged="ValueChanged"></Slider>
 
             <Canvas Width="460" Height="40" Background="OliveDrab">
-                <Border Width="60" CornerRadius="10" Background="AliceBlue" Name="weight" Canvas.Top="0" Canvas.Left="0">
+                <Border Name="weight" Width="60" CornerRadius="10" Background="AliceBlue" Canvas.Top="0" Canvas.Left="0">
                     <TextBlock Name="Weightnumber" Width="40" Height="30" TextAlignment="Center" Padding="0 4">0</TextBlock>
                 </Border>
             </Canvas>
 
-            <Slider Name="w" Width="400" Minimum="0" Maximum="100" ValueChanged="w_ValueChanged"></Slider>
+            <Slider Name="w" Width="400" Minimum="0" Maximum="100" ValueChanged="ValueChanged"></Slider>
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Name="bminumber1" FontSize="40">00</TextBlock>
